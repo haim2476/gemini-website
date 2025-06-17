@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
@@ -118,16 +119,15 @@
     <div class="stars-container" id="stars-background"></div>
 
     <!-- Header & Navigation -->
-    <header class="bg-gradient-to-b from-purple-950/70 to-transparent fixed w-full z-50 shadow-lg rounded-b-xl">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- בס"ד on the right -->
-            <div class="text-sm text-gray-400 absolute top-2 right-4 md:right-8">
-                בס"ד
-            </div>
-            <div class="text-3xl font-bold neon-text rounded-lg p-2">
-                H.G פרוייקטים
-            </div>
-            <ul class="flex space-x-8 text-lg">
+    <header class="bg-gradient-to-b from-purple-950/70 to-transparent fixed w-full z-50 shadow-lg rounded-b-xl pb-4">
+        <!-- בס"ד on the very top right -->
+        <div class="absolute top-2 right-4 text-sm text-gray-400">
+            בס"ד
+        </div>
+        <!-- Removed H.G פרוייקטים title here -->
+        <!-- Navigation links - now centered and below בס"ד -->
+        <nav class="container mx-auto px-6 pt-4 flex justify-center items-center">
+            <ul class="flex flex-wrap justify-center gap-x-8 gap-y-2 text-lg">
                 <li><a href="#home" class="hover:neon-text transition duration-300 rounded-lg p-2">בית</a></li>
                 <li><a href="#services" class="hover:neon-text transition duration-300 rounded-lg p-2">שירותים</a></li>
                 <li><a href="#portfolio" class="hover:neon-text transition duration-300 rounded-lg p-2">פורטפוליו</a></li>
@@ -138,7 +138,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center text-center p-8 overflow-hidden rounded-b-3xl">
+    <section id="home" class="relative min-h-screen flex items-center justify-center text-center p-8 overflow-hidden rounded-b-3xl pt-24">
         <!-- Background elements for 'Space/Startup' feel -->
         <div class="absolute inset-0 z-0 opacity-20">
             <div class="absolute w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob top-1/4 left-1/4"></div>
@@ -311,7 +311,7 @@
                 </p>
                 <!-- Placeholder for Logo image -->
                 <div class="w-40 h-40 mx-auto mt-8 rounded-full overflow-hidden flex items-center justify-center bg-gray-700">
-                    <img src="https://placehold.co/160x160/333333/888888" alt="[מקום לתמונת צוות או לוגו]" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/160x160/666666/DDDDDD?text=טעינת+תמונה+נכשלה'">
+                    <img src="https://placehold.co/160x160/333333/888888?text=לוגו+שלך" alt="[מקום לתמונת צוות או לוגו]" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/160x160/666666/DDDDDD?text=טעינת+תמונה+נכשלה'">
                 </div>
                 <p class="text-sm text-gray-400 mt-2">
                     (כאן תוכל להוסיף תמונה של פיל עומד על רגליים אחוריות, או תמונת צוות/לוגו)
