@@ -1,4 +1,73 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H.G פרוייקטים - בניית אתרים ויצירת סרטונים</title>
+    <!-- Tailwind CSS CDN for modern and responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom CSS for the 'Space/Startup' theme */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0A0A0F 0%, #1A0033 50%, #0A0A0F 100%); /* Dark space gradient */
+            color: #E0E0E0; /* Light grey for general text */
+            overflow-x: hidden; /* Prevent horizontal scroll due to stars */
+            position: relative; /* Needed for absolute positioning of stars */
+        }
+        .neon-glow {
+            box-shadow: 0 0 5px rgba(0, 255, 255, 0.7), 0 0 10px rgba(0, 255, 255, 0.5), 0 0 15px rgba(0, 255, 255, 0.3);
+        }
+        .neon-text {
+            color: #00FFFF; /* Cyan neon */
+            text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px rgba(0, 255, 255, 0.5);
+        }
+        .section-gradient {
+            background: linear-gradient(90deg, rgba(26,0,51,0.5) 0%, rgba(0,0,0,0.5) 50%, rgba(26,0,51,0.5) 100%);
+        }
+        .btn-primary {
+            background-color: #7B00FF; /* Darker purple for buttons */
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #9A20FF; /* Lighter purple on hover */
+            transform: translateY(-2px);
+        }
+        .btn-whatsapp {
+            background-color: #25D366; /* WhatsApp green */
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .btn-whatsapp:hover {
+            background-color: #1DA851; /* Darker green on hover */
+            transform: translateY(-2px);
+        }
+        .card-bg {
+            background-color: rgba(30, 0, 60, 0.7); /* Slightly transparent dark purple for cards */
+            backdrop-filter: blur(5px);
+        }
+        /* Custom scrollbar for a sleeker look */
+        ::-webkit-scrollbar {
+            width: 8px;
+            background-color: #0A0A0F;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #7B00FF;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background-color: #1A0033;
+        }
 
+        /* Basic animation for hero elements */
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
                 transform: translateY(0);
             }
         }
@@ -31,3 +100,346 @@
                 opacity: 0;
             }
             10% {
+                opacity: 1;
+            }
+            80% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(calc(100vh + 100px)) scale(1.2);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Sparkling Stars Container -->
+    <div class="stars-container" id="stars-background"></div>
+
+    <!-- Header & Navigation -->
+    <header class="bg-gradient-to-b from-purple-950/70 to-transparent fixed w-full z-50 shadow-lg rounded-b-xl pb-4">
+        <!-- בס"ד on the very top right -->
+        <div class="absolute top-2 right-4 text-sm text-gray-400">
+            בס"ד
+        </div>
+        <!-- Removed H.G פרוייקטים title here -->
+        <!-- Navigation links - now centered and below בס"ד -->
+        <nav class="container mx-auto px-6 pt-4 flex justify-center items-center">
+            <ul class="flex flex-wrap justify-center gap-x-8 gap-y-2 text-lg">
+                <li><a href="#home" class="hover:neon-text transition duration-300 rounded-lg p-2">בית</a></li>
+                <li><a href="#services" class="hover:neon-text transition duration-300 rounded-lg p-2">שירותים</a></li>
+                <li><a href="#portfolio" class="hover:neon-text transition duration-300 rounded-lg p-2">פורטפוליו</a></li>
+                <li><a href="#about" class="hover:neon-text transition duration-300 rounded-lg p-2">אודות</a></li>
+                <li><a href="#contact" class="hover:neon-text transition duration-300 rounded-lg p-2">יצירת קשר</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center text-center p-8 overflow-hidden rounded-b-3xl pt-24">
+        <!-- Background elements for 'Space/Startup' feel -->
+        <div class="absolute inset-0 z-0 opacity-20">
+            <div class="absolute w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob top-1/4 left-1/4"></div>
+            <div class="absolute w-64 h-64 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000 top-1/2 right-1/4"></div>
+            <div class="absolute w-64 h-64 bg-fuchsia-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000 bottom-1/4 left-1/2"></div>
+        </div>
+        <div class="relative z-10 max-w-4xl mx-auto space-y-8">
+            <h1 class="text-6xl font-extrabold leading-tight neon-text fade-in-up">
+                <span class="block">H.G פרוייקטים:</span>
+                <span class="block mt-4">בונים את העתיד הדיגיטלי שלך</span>
+            </h1>
+            <p class="text-2xl text-gray-300 fade-in-up delay-1">
+                מתמחים בבניית אתרים מרהיבים ויצירת סרטוני תדמית מנצחים
+            </p>
+            <div class="flex flex-wrap justify-center gap-6 mt-10 fade-in-up delay-2">
+                <div class="bg-purple-800 text-white py-3 px-8 rounded-full shadow-lg neon-glow text-lg font-semibold flex items-center justify-center min-w-[180px] h-16">
+                    <span class="ml-2">מקצועיות</span> <i class="fas fa-star"></i>
+                </div>
+                <div class="bg-cyan-800 text-white py-3 px-8 rounded-full shadow-lg neon-glow text-lg font-semibold flex items-center justify-center min-w-[180px] h-16">
+                    <span class="ml-2">מחירים הוגנים</span> <i class="fas fa-shekel-sign"></i>
+                </div>
+                <div class="bg-fuchsia-800 text-white py-3 px-8 rounded-full shadow-lg neon-glow text-lg font-semibold flex items-center justify-center min-w-[180px] h-16">
+                    <span class="ml-2">שירות ללא תחרות</span> <i class="fas fa-rocket"></i>
+                </div>
+            </div>
+            <a href="#contact" class="inline-block mt-12 py-4 px-10 btn-primary text-white text-xl font-bold rounded-full shadow-xl neon-glow hover:scale-105 transition-all duration-300 fade-in-up delay-3">
+                צור קשר עכשיו!
+            </a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 text-center section-gradient rounded-3xl mx-4 my-8">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-bold neon-text mb-12">השירותים שלנו</h2>
+            <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <!-- Web Development Service Card -->
+                <div class="card-bg p-8 rounded-2xl shadow-xl border border-purple-700/50 hover:border-cyan-500/70 transition duration-300">
+                    <div class="text-6xl text-cyan-400 mb-6">
+                        <!-- Placeholder for web icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="em" height="em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-24 h-24 mx-auto lucide lucide-layout-dashboard"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+                    </div>
+                    <h3 class="text-3xl font-semibold text-white mb-4">בניית אתרים</h3>
+                    <p class="text-lg text-gray-300">
+                        אנו בונים אתרים מותאמים אישית לעסקים ולפרטיים, החל מאתרי תדמית מרהיבים ועד חנויות אונליין מתקדמות.
+                        האתרים רספונסיביים, מהירים ומעוצבים באופן שימשוך את קהל היעד שלך וישרת את מטרותיך העסקיות.
+                        אנו מקפידים על חווית משתמש אופטימלית וקידום במנועי חיפוש.
+                    </p>
+                    <a href="#contact" class="inline-block mt-6 py-3 px-8 btn-primary text-white text-md font-semibold rounded-full hover:scale-105 transition-all duration-300">
+                        קבל הצעת מחיר לאתר
+                    </a>
+                </div>
+                <!-- Video Production Service Card -->
+                <div class="card-bg p-8 rounded-2xl shadow-xl border border-fuchsia-700/50 hover:border-cyan-500/70 transition duration-300">
+                    <div class="text-6xl text-purple-400 mb-6">
+                        <!-- Placeholder for video icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="em" height="em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-24 h-24 mx-auto lucide lucude-film"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18"/><path d="M3 7.5h4"/><path d="M3 12h18"/><path d="M3 16.5h4"/><path d="M17 3v18"/><path d="M17 7.5h4"/><path d="M17 16.5h4"/></svg>
+                    </div>
+                    <h3 class="text-3xl font-semibold text-white mb-4">יצירת סרטוני תדמית</h3>
+                    <p class="text-lg text-gray-300">
+                        אנחנו יוצרים סרטוני תדמית איכותיים ומרתקים שיספרו את הסיפור של העסק שלך וימשכו את הקהל.
+                        בין אם מדובר בסרטון אנימציה, וידאו שיווקי או סרטון הסבר, אנו נדאג שהמסר שלך יעבור בצורה ברורה ויצירתית.
+                        השירות כולל תסריט, צילום, עריכה ופוסט-פרודאקשן ברמה הגבוהה ביותר.
+                    </p>
+                    <a href="#contact" class="inline-block mt-6 py-3 px-8 btn-primary text-white text-md font-semibold rounded-full hover:scale-105 transition-all duration-300">
+                        קבל הצעת מחיר לסרטון
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 text-center rounded-3xl mx-4 my-8">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-bold neon-text mb-12">הפורטפוליו שלנו</h2>
+
+            <!-- Video Portfolio -->
+            <h3 class="text-4xl font-semibold text-white mb-8">סרטונים שבנינו</h3>
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <!-- Video 1 - TikTok Profile -->
+                <div class="card-bg p-6 rounded-2xl shadow-xl border border-cyan-700/50">
+                    <div class="aspect-video rounded-lg overflow-hidden mb-4 flex items-center justify-center bg-gray-800">
+                        <img src="https://placehold.co/600x338/000000/FFFFFF?text=TikTok+Profile" alt="[תמונת פרופיל TikTok]" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x338/000000/FFFFFF?text=טעינת+תמונה+נכשלה'">
+                    </div>
+                    <p class="text-lg font-semibold text-white">ערוץ TikTok - תוכן השראה יהודי</p>
+                    <p class="text-sm text-gray-400 mt-2">
+                        פרופיל TikTok המכיל סרטוני השראה, שיעורים ותכנים על רבנים שונים (כגון הרב מאיר שלמה, הרב מנחם אדרעי, הרב ברק כהן, והרב שניר גואטה), כולל נושאים הקשורים לחסידות ברסלב ואומן.
+                    </p>
+                    <a href="https://www.tiktok.com/@ghh0439?is_from_webapp=1&sender_device=pc" target="_blank" class="inline-block mt-4 text-cyan-400 hover:text-cyan-300 transition duration-300">צפה בפרופיל TikTok <i class="fab fa-tiktok"></i></a>
+                </div>
+                <!-- Video 2 - New TikTok Video -->
+                <div class="card-bg p-6 rounded-2xl shadow-xl border border-cyan-700/50">
+                    <div class="aspect-video rounded-lg overflow-hidden mb-4 flex items-center justify-center bg-gray-800">
+                        <img src="https://placehold.co/600x338/5B0099/FFFFFF?text=TikTok+Video" alt="[תמונת סרטון TikTok]" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x338/5B0099/FFFFFF?text=טעינת+תמונה+נכשלה'">
+                    </div>
+                    <p class="text-lg font-semibold text-white">סרטון TikTok חדש - תובנות והשראה</p>
+                    <p class="text-sm text-gray-400 mt-2">
+                        סרטון קצר המציג תובנה או מסר השראה, בדומה לתכנים בפרופיל ה-TikTok שלך.
+                    </p>
+                    <a href="https://www.tiktok.com/@ghh0439/video/7515970261905181960?is_from_webapp=1&sender_device=pc&web_id=7516159052582864390" target="_blank" class="inline-block mt-4 text-cyan-400 hover:text-cyan-300 transition duration-300">צפה בסרטון TikTok <i class="fab fa-tiktok"></i></a>
+                </div>
+                <!-- Video 3 - Another TikTok Video -->
+                <div class="card-bg p-6 rounded-2xl shadow-xl border border-cyan-700/50">
+                    <div class="aspect-video rounded-lg overflow-hidden mb-4 flex items-center justify-center bg-gray-800">
+                        <img src="https://placehold.co/600x338/99005B/FFFFFF?text=TikTok+Video" alt="[תמונת סרטון TikTok נוסף]" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x338/99005B/FFFFFF?text=טעינת+תמונה+נכשלה'">
+                    </div>
+                    <p class="text-lg font-semibold text-white">סרטון TikTok נוסף - מסר מעורר השראה</p>
+                    <p class="text-sm text-gray-400 mt-2">
+                        סרטון TikTok הממשיך להעביר מסרים של השראה ותובנות, המדגיש את מגוון התוכן שאתה יוצר.
+                    </p>
+                    <a href="https://www.tiktok.com/@ghh0439/video/7512379139312078098?is_from_webapp=1&sender_device=pc&web_id=7516159052582864390" target="_blank" class="inline-block mt-4 text-cyan-400 hover:text-cyan-300 transition duration-300">צפה בסרטון TikTok <i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <!-- Website Portfolio -->
+            <h3 class="text-4xl font-semibold text-white mb-8">אתרים שבנינו</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Website 1 - הסוד שבך -->
+                <div class="card-bg p-6 rounded-2xl shadow-xl border border-fuchsia-700/50">
+                    <div class="aspect-video rounded-lg overflow-hidden mb-4">
+                        <img src="https://placehold.co/600x338/5C1B80/FFFFFF?text=אתר+הסוד+שבך" alt="[תמונת אתר הסוד שבך]" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x338/5C1B80/FFFFFF?text=טעינת+תמונה+נכשלה'">
+                    </div>
+                    <p class="text-lg font-semibold text-white">הסוד שבך - הרב מאיר שלמה</p>
+                    <p class="text-sm text-gray-400 mt-2">
+                        אתר המציג את הספר "הסוד שבך", המדריך לגילוי עצמי רוחני וחיבור פנימי. כולל ביוגרפיה, קטעי ספר ורכישה.
+                    </p>
+                    <a href="https://haim2476.github.io/hasod-shebcha/" target="_blank" class="inline-block mt-4 text-cyan-400 hover:text-cyan-300 transition duration-300">צפה באתר <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <!-- Website 2 - Deko -->
+                <div class="card-bg p-6 rounded-2xl shadow-xl border border-fuchsia-700/50">
+                    <div class="aspect-video rounded-lg overflow-hidden mb-4">
+                        <img src="https://placehold.co/600x338/202050/FFFFFF?text=Deko" alt="[תמונת אתר Deko]" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x338/202050/FFFFFF?text=טעינת+תמונה+נכשלה'">
+                    </div>
+                    <p class="text-lg font-semibold text-white">Deko - פרויקט עיצוב ופיתוח</p>
+                    <p class="text-sm text-gray-400 mt-2">
+                        פרויקט אתר שפותח עבור Deko.
+                    </p>
+                    <a href="https://deko.lovable.app" target="_blank" class="inline-block mt-4 text-cyan-400 hover:text-cyan-300 transition duration-300">צפה באתר <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <!-- Website 3 - Fondak -->
+                <div class="card-bg p-6 rounded-2xl shadow-xl border border-fuchsia-700/50">
+                    <div class="aspect-video rounded-lg overflow-hidden mb-4">
+                        <img src="https://placehold.co/600x338/8B4513/FFFFFF?text=Fondak" alt="[תמונת אתר Fondak]" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x338/8B4513/FFFFFF?text=טעינת+תמונה+נכשלה'">
+                    </div>
+                    <p class="text-lg font-semibold text-white">Fondak - Hebrew Feast (פאב בבני ברק)</p>
+                    <p class="text-sm text-gray-400 mt-2">
+                        אתר למסעדה יהודית מסורתית בבני ברק, המציג את המקום ואת המאכלים.
+                    </p>
+                    <a href="https://fondak-hebrew-feast.lovable.app" target="_blank" class="inline-block mt-4 text-cyan-400 hover:text-cyan-300 transition duration-300">צפה באתר <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 text-center section-gradient rounded-3xl mx-4 my-8">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-5xl font-bold neon-text mb-12">אודות H.G פרוייקטים</h2>
+            <div class="card-bg p-8 rounded-2xl shadow-xl border border-purple-700/50">
+                <p class="text-xl text-gray-300 leading-relaxed mb-6">
+                    ב-H.G פרוייקטים, אנו מאמינים שלכל עסק, גדול כקטן, מגיע ייצוג דיגיטלי יוצא דופן.
+                    אנו מתמחים ביצירת אתרים וסרטונים המותאמים אישית לצרכים הייחודיים שלך,
+                    ומבטיחים שהמסר שלך יגיע לקהל היעד בצורה הברורה, המקצועית והמרשימה ביותר.
+                </p>
+                <p class="text-xl text-gray-300 leading-relaxed mb-6">
+                    עם ניסיון עשיר בתחום וגישה יצירתית לכל פרויקט, אנו מתחייבים לתוצאות המדברות בעד עצמן.
+                    המחויבות שלנו למקצועיות, מחירים הוגנים ושירות ללא תחרות היא הבסיס לכל מה שאנו עושים.
+                    אנו כאן כדי להפוך את החזון הדיגיטלי שלך למציאות.
+                </p>
+                <!-- Placeholder for Logo image -->
+                <div class="w-40 h-40 mx-auto mt-8 rounded-full overflow-hidden flex items-center justify-center bg-gray-700">
+                    <img src="https://placehold.co/160x160/333333/888888?text=לוגו+שלך" alt="[מקום לתמונת צוות או לוגו]" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/160x160/666666/DDDDDD?text=טעינת+תמונה+נכשלה'">
+                </div>
+                <p class="text-sm text-gray-400 mt-2">
+                    (כאן תוכל להוסיף תמונה של פיל עומד על רגליים אחוריות, או תמונת צוות/לוגו)
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 text-center rounded-3xl mx-4 my-8">
+        <div class="container mx-auto px-6 max-w-2xl">
+            <h2 class="text-5xl font-bold neon-text mb-12">ניצור איתך קשר!</h2>
+            <div class="card-bg p-8 rounded-2xl shadow-xl border border-cyan-700/50">
+                <p class="text-lg text-gray-300 mb-8">
+                    יש לך רעיון לאתר? רוצה לשדרג את סרטון התדמית שלך?
+                    מלא את הפרטים ונחזור אליך בהקדם עם פתרון מותאם אישית.
+                </p>
+                <form class="space-y-6 text-right">
+                    <div>
+                        <label for="name" class="block text-gray-300 text-sm font-bold mb-2">שם מלא:</label>
+                        <input type="text" id="name" name="name" class="shadow appearance-none border border-gray-700 rounded-lg w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-500 bg-gray-800 transition duration-300" placeholder="הכנס את שמך">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-300 text-sm font-bold mb-2">אימייל:</label>
+                        <input type="email" id="email" name="email" class="shadow appearance-none border border-gray-700 rounded-lg w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-500 bg-gray-800 transition duration-300" placeholder="example@domain.com">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-gray-300 text-sm font-bold mb-2">טלפון (אופציונלי):</label>
+                        <input type="tel" id="phone" name="phone" class="shadow appearance-none border border-gray-700 rounded-lg w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-500 bg-gray-800 transition duration-300" placeholder="05X-XXXXXXX">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-gray-300 text-sm font-bold mb-2">הודעה:</label>
+                        <textarea id="message" name="message" rows="5" class="shadow appearance-none border border-gray-700 rounded-lg w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-500 bg-gray-800 transition duration-300" placeholder="ספר לנו על הפרוייקט שלך..."></textarea>
+                    </div>
+                    <div class="flex justify-center gap-4">
+                        <button type="submit" class="btn-primary py-4 px-8 text-white text-xl font-bold rounded-full shadow-xl neon-glow hover:scale-105 transition-all duration-300">
+                            שלח הודעה
+                        </button>
+                        <a href="https://wa.me/972534486141" target="_blank" class="btn-whatsapp py-4 px-8 text-white text-xl font-bold rounded-full shadow-xl neon-glow flex items-center justify-center hover:scale-105 transition-all duration-300">
+                            <i class="fab fa-whatsapp text-2xl ml-2"></i> WhatsApp
+                        </a>
+                    </div>
+                </form>
+                <div class="mt-8 text-lg text-gray-300">
+                    <p>או צור קשר ישירות:</p>
+                    <p class="mt-2 neon-text">Email: <a href="mailto:HAIMGUY24762476@GMAIL.COM">HAIMGUY24762476@GMAIL.COM</a></p>
+                    <p class="neon-text">Phone: <a href="tel:+972534486141">053-4486141</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900/70 py-8 text-center text-gray-400 rounded-t-xl mt-8">
+        <div class="container mx-auto px-6">
+            <p>&copy; 2023 H.G פרוייקטים. כל הזכויות שמורות.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <!-- Social Media Icons Placeholders -->
+                <a href="#" class="hover:text-white transition duration-300"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-white transition duration-300"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-white transition duration-300"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Font Awesome for icons (social media, checkmarks etc.) -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Basic form submission (for demonstration, no backend integration)
+        document.querySelector('#contact form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Using custom message box instead of alert in production
+            const messageBox = document.createElement('div');
+            messageBox.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: #333;
+                color: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                z-index: 1000;
+                text-align: center;
+                max-width: 80%;
+            `;
+            messageBox.innerHTML = `
+                <p>הודעתך נשלחה בהצלחה! H.G פרוייקטים יחזרו אליך בהקדם.</p>
+                <button onclick="this.parentNode.remove()" style="background-color: #7B00FF; color: white; padding: 8px 15px; border-radius: 5px; border: none; cursor: pointer; margin-top: 15px;">אישור</button>
+            `;
+            document.body.appendChild(messageBox);
+
+            // In a real application, you would send this data to a server
+            this.reset(); // Clear the form after submission
+        });
+
+        // Generate and animate sparkling stars
+        document.addEventListener('DOMContentLoaded', () => {
+            const starsContainer = document.getElementById('stars-background');
+            const numStars = 50; // Number of stars to generate
+
+            for (let i = 0; i < numStars; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                // Random size for variety
+                const size = Math.random() * 3 + 1; // 1px to 4px
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                // Random position on the X axis (0-100vw)
+                star.style.left = `${Math.random() * 100}vw`;
+                // Random animation duration for varying speeds
+                star.style.animationDuration = `${Math.random() * 5 + 5}s`; // 5s to 10s
+                // Random animation delay for staggered appearance
+                star.style.animationDelay = `${Math.random() * 5}s`; // 0s to 5s
+                starsContainer.appendChild(star);
+            }
+        });
+    </script>
+</body>
+</html>
